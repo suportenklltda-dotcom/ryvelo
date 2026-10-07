@@ -1,29 +1,29 @@
-import { RotateCcw } from "lucide-react";
 import * as React from "react";
 import {
-  ArrowUpRight,
-  Building2,
-  CalendarDays,
-  ChartNoAxesCombined,
-  Check,
-  ChevronRight,
-  CircleCheck,
-  Clock,
-  FileText,
-  House,
-  Info,
-  Menu,
-  MessageCircle,
-  Minus,
-  MoveUpRight,
-  Phone,
-  Plus,
-  Search,
-  Settings,
-  ShieldCheck,
-  Users,
-  Wallet,
-  X,
+  ArrowUpRight as IconArrowUpRight,
+  Building2 as IconBuilding2,
+  CalendarDays as IconCalendarDays,
+  ChartNoAxesCombined as IconChartNoAxesCombined,
+  Check as IconCheck,
+  ChevronRight as IconChevronRight,
+  CircleCheck as IconCircleCheck,
+  Clock as IconClock,
+  FileText as IconFileText,
+  House as IconHouse,
+  Info as IconInfo,
+  Menu as IconMenu,
+  MessageCircle as IconMessageCircle,
+  Minus as IconMinus,
+  MoveUpRight as IconMoveUpRight,
+  Phone as IconPhone,
+  Plus as IconPlus,
+  RotateCcw as IconRotateCcw,
+  Search as IconSearch,
+  Settings as IconSettings,
+  ShieldCheck as IconShieldCheck,
+  Users as IconUsers,
+  Wallet as IconWallet,
+  X as IconX,
 } from "lucide-react";
 function Modal({ title: N, onClose: E, children: L }) {
   const y = React.useRef(null),
@@ -55,7 +55,7 @@ function Modal({ title: N, onClose: E, children: L }) {
         <header className={"modal-head"}>
           <h2>{N}</h2>
           <button className={"icon-button"} aria-label={"Fechar"} onClick={E}>
-            <X size={21} />
+            <IconX size={21} />
           </button>
         </header>
         {L}
@@ -254,31 +254,31 @@ function loadDemoState() {
 const navigationItems = [
   {
     name: "Início",
-    icon: House,
+    icon: IconHouse,
   },
   {
     name: "Acompanhamento",
-    icon: ChartNoAxesCombined,
+    icon: IconChartNoAxesCombined,
   },
   {
     name: "Agenda",
-    icon: CalendarDays,
+    icon: IconCalendarDays,
   },
   {
     name: "Pacientes",
-    icon: Users,
+    icon: IconUsers,
   },
   {
     name: "Orçamentos",
-    icon: FileText,
+    icon: IconFileText,
   },
   {
     name: "Financeiro",
-    icon: Wallet,
+    icon: IconWallet,
   },
   {
     name: "Configurações",
-    icon: Settings,
+    icon: IconSettings,
   },
 ];
 function ClinicDemo() {
@@ -443,7 +443,7 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
           aria-label={"Fechar menu"}
           onClick={() => jl(!1)}
         >
-          <X />
+          <IconX />
         </button>
         <div className={"workspace-label"}>{"GESTÃO DA CLÍNICA"}</div>
         <nav aria-label={"Navegação principal"}>
@@ -470,7 +470,7 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
         </nav>
         <div className={"sidebar-bottom"}>
           <div className={"clinic"}>
-            <Building2 size={21} />
+            <IconBuilding2 size={21} />
             <div>
               <b>{"Clínica Horizonte"}</b>
               <small>{"2 profissionais · 3 cadeiras"}</small>
@@ -500,10 +500,10 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
             aria-label={"Abrir menu"}
             onClick={() => jl(!0)}
           >
-            <Menu />
+            <IconMenu />
           </button>
           <label className={"search"}>
-            <Search size={19} />
+            <IconSearch size={19} />
             <input
               aria-label={"Buscar paciente ou procedimento"}
               placeholder={"Buscar paciente ou procedimento…"}
@@ -516,12 +516,12 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
                 aria-label={"Limpar busca"}
                 onClick={() => y("")}
               >
-                <X size={16} />
+                <IconX size={16} />
               </button>
             )}
           </label>
           <span className={"date-label"}>
-            <CalendarDays size={17} />
+            <IconCalendarDays size={17} />
             {"6 de outubro de 2026"}
           </span>
           <button
@@ -530,7 +530,7 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
               (Ml(null), ol(Vi[0]), Kl(""), j("schedule"));
             }}
           >
-            <Plus size={18} />
+            <IconPlus size={18} />
             <span>{"Nova consulta"}</span>
           </button>
         </header>
@@ -551,7 +551,7 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
             </p>
           </div>
           <button className={"text-button reset"} onClick={() => j("reset")}>
-            <RotateCcw size={15} />
+            <IconRotateCcw size={15} />
             {"Restaurar demonstração"}
           </button>
         </section>
@@ -569,9 +569,9 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
           >
             <div className={"metric-top"}>
               <span className={"metric-icon"}>
-                <Clock size={20} />
+                <IconClock size={20} />
               </span>
-              <ArrowUpRight size={18} />
+              <IconArrowUpRight size={18} />
             </div>
             <strong>{Q.filter((v) => v.kind === "retorno").length}</strong>
             <h2>{"Retornos vencidos"}</h2>
@@ -585,9 +585,9 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
           >
             <div className={"metric-top"}>
               <span className={"metric-icon"}>
-                <FileText size={20} />
+                <IconFileText size={20} />
               </span>
-              <ArrowUpRight size={18} />
+              <IconArrowUpRight size={18} />
             </div>
             <strong>{Ga.length}</strong>
             <h2>{"Orçamentos em aberto"}</h2>
@@ -598,9 +598,9 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
           <button className={"metric navy"} onClick={() => j("result")}>
             <div className={"metric-top"}>
               <span className={"metric-icon"}>
-                <ChartNoAxesCombined size={20} />
+                <IconChartNoAxesCombined size={20} />
               </span>
-              <ArrowUpRight size={18} />
+              <IconArrowUpRight size={18} />
             </div>
             <strong className={"money"}>{je(18450)}</strong>
             <h2>{"Recebido após acompanhamento"}</h2>
@@ -609,9 +609,9 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
           <button className={"metric"} onClick={() => j("result")}>
             <div className={"metric-top"}>
               <span className={"metric-icon"}>
-                <Users size={20} />
+                <IconUsers size={20} />
               </span>
-              <ArrowUpRight size={18} />
+              <IconArrowUpRight size={18} />
             </div>
             <strong>{"16"}</strong>
             <h2>{"Pacientes recuperados"}</h2>
@@ -701,7 +701,7 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
                             disabled={D.optOut}
                             onClick={() => r(v, "contact")}
                           >
-                            <MessageCircle size={15} />
+                            <IconMessageCircle size={15} />
                             {D.optOut ? "Sem mensagens" : "Chamar"}
                           </button>
                         </td>
@@ -712,7 +712,7 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
               </table>
               {!ll.length && (
                 <div className={"empty"}>
-                  <CircleCheck size={30} />
+                  <IconCircleCheck size={30} />
                   <h3>{"Nenhum paciente nesta seleção"}</h3>
                   <p>{"Tente outro filtro ou termo de busca."}</p>
                   <button
@@ -781,7 +781,7 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
               ))}
             </div>
             <div className={"agenda-footer"}>
-              <CalendarDays size={18} />
+              <IconCalendarDays size={18} />
               <span>{"Acompanhe confirmações e horários na agenda."}</span>
             </div>
           </section>
@@ -815,7 +815,7 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
           </section>
           <section className={"panel explanation"}>
             <div className={"info-icon"}>
-              <Info size={22} />
+              <IconInfo size={22} />
             </div>
             <h2>{"Do contato ao cuidado"}</h2>
             <p>
@@ -825,12 +825,12 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
             </p>
             <div className={"process"}>
               <span>
-                <Check size={14} />
+                <IconCheck size={14} />
                 {"Chamar"}
               </span>
-              <ChevronRight size={13} />
+              <IconChevronRight size={13} />
               <span>{"Agendar"}</span>
-              <ChevronRight size={13} />
+              <IconChevronRight size={13} />
               <span>{"Retornar"}</span>
             </div>
             <small>
@@ -851,7 +851,7 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
       </main>
       {Oa && (
         <div className={"toast"} role={"status"}>
-          <CircleCheck size={19} />
+          <IconCircleCheck size={19} />
           {Oa}
         </div>
       )}
@@ -897,7 +897,7 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
                 />
               </label>
               <div className={"callout"}>
-                <Phone size={18} />
+                <IconPhone size={18} />
                 <p>
                   {
                     "Sem envio real nesta demonstração. Abrir o WhatsApp não registra o contato automaticamente."
@@ -918,7 +918,7 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
                     );
                   }}
                 >
-                  <MessageCircle size={18} />
+                  <IconMessageCircle size={18} />
                   {"Prévia do WhatsApp"}
                 </button>
                 <button className={"primary"} disabled={A.optOut} onClick={T}>
@@ -953,7 +953,7 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
                 </select>
               </label>
               <div className={"callout"}>
-                <Info size={18} />
+                <IconInfo size={18} />
                 <p>
                   {A.preference}
                   {". Consultas duram 60 minutos nesta demonstração."}
@@ -1081,7 +1081,7 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
                 </p>
               )}
               <div className={"callout"}>
-                <Info size={18} />
+                <IconInfo size={18} />
                 <p>
                   {
                     "A ficha clínica completa e o odontograma serão construídos na etapa de Pacientes."
@@ -1213,22 +1213,22 @@ Se preferir não receber mensagens de acompanhamento, avise nossa equipe.`),
 }
 const questions = [
     {
-      icon: CalendarDays,
+      icon: IconCalendarDays,
       title: "Uma agenda conectada.",
       text: "Consultas, profissionais e cadeiras organizados. Do acompanhamento ao horário marcado, com contexto.",
     },
     {
-      icon: Users,
+      icon: IconUsers,
       title: "O paciente, por inteiro.",
       text: "Cadastro, histórico e preferências reunidos para sua equipe continuar de onde parou.",
     },
     {
-      icon: FileText,
+      icon: IconFileText,
       title: "Tratamentos em movimento.",
       text: "Orçamentos e próximas ações visíveis para que cada avaliação tenha acompanhamento.",
     },
     {
-      icon: Wallet,
+      icon: IconWallet,
       title: "Resultado que você enxerga.",
       text: "Separe tratamentos pendentes de valores recebidos e acompanhe a evolução da clínica.",
     },
@@ -1319,7 +1319,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
             aria-label={N ? "Fechar menu" : "Abrir menu"}
             onClick={() => E(!N)}
           >
-            {N ? <X /> : <Menu />}
+            {N ? <IconX /> : <IconMenu />}
           </button>
         </nav>
         <section className={"s-hero"}>
@@ -1344,7 +1344,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
                 onClick={() => $("Demonstração")}
               >
                 {"Conhecer a Ryvelo "}
-                <ArrowUpRight size={18} />
+                <IconArrowUpRight size={18} />
               </button>
               <a className={"s-btn s-btn-outline"} href={"/demo"}>
                 {"Explorar demonstração"}
@@ -1352,9 +1352,9 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
             </div>
             <div className={"s-hero-note"}>
               <span className={"s-tiny-icons"}>
-                <CalendarDays size={15} />
-                <MessageCircle size={15} />
-                <Users size={15} />
+                <IconCalendarDays size={15} />
+                <IconMessageCircle size={15} />
+                <IconUsers size={15} />
               </span>
               <span>{"Uma rotina conectada. Uma equipe com direção."}</span>
             </div>
@@ -1372,12 +1372,12 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
                 <p>{"18 pacientes para acompanhar"}</p>
                 <div className={"s-preview-metrics"}>
                   <div>
-                    <Clock size={17} />
+                    <IconClock size={17} />
                     <b>{"40"}</b>
                     <span>{"Retornos vencidos"}</span>
                   </div>
                   <div>
-                    <FileText size={17} />
+                    <IconFileText size={17} />
                     <b>{"R$85 mil"}</b>
                     <span>{"Orçamentos pendentes"}</span>
                   </div>
@@ -1413,7 +1413,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
             </div>
             <div className={"s-floating"}>
               <span>
-                <Check size={17} />
+                <IconCheck size={17} />
               </span>
               <div>
                 <b>{"Próximo passo: agendado."}</b>
@@ -1460,7 +1460,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
                 }
               </p>
               <div className={"s-example"}>
-                <Clock size={19} />
+                <IconClock size={19} />
                 <span>{"Mariana · retorno vencido há 32 dias"}</span>
               </div>
             </div>
@@ -1546,7 +1546,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
             </p>
             <a href={"/demo"}>
               {"Explorar o painel "}
-              <MoveUpRight size={16} />
+              <IconMoveUpRight size={16} />
             </a>
           </div>
         </section>
@@ -1630,15 +1630,15 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
               </h3>
               <div className={"s-custom-progress"}>
                 <span>
-                  <Check size={15} />
+                  <IconCheck size={15} />
                   {"Identidade aplicada"}
                 </span>
                 <span>
-                  <Check size={15} />
+                  <IconCheck size={15} />
                   {"Processos configurados"}
                 </span>
                 <span>
-                  <Check size={15} />
+                  <IconCheck size={15} />
                   {"Equipe treinada"}
                 </span>
               </div>
@@ -1669,7 +1669,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
                 "Acompanhamento durante a implantação",
               ].map((A) => (
                 <li key={A}>
-                  <Check size={17} />
+                  <IconCheck size={17} />
                   {A}
                 </li>
               ))}
@@ -1679,7 +1679,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
               onClick={() => $("Implantação personalizada")}
             >
               {"Quero minha operação implantada "}
-              <ArrowUpRight size={18} />
+              <IconArrowUpRight size={18} />
             </button>
           </div>
         </section>
@@ -1750,7 +1750,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
                   "Acompanhamento na implantação",
                 ].map((A) => (
                   <li key={A}>
-                    <Check size={16} />
+                    <IconCheck size={16} />
                     {A}
                   </li>
                 ))}
@@ -1817,7 +1817,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
           <details className={"s-comparison"}>
             <summary>
               {"Comparar recursos e limites "}
-              <Plus size={18} />
+              <IconPlus size={18} />
             </summary>
             <div className={"s-compare-scroll"}>
               <table>
@@ -1884,8 +1884,8 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
               <details key={A}>
                 <summary>
                   {A}
-                  <Plus size={18} className={"plus"} />
-                  <Minus size={18} className={"minus"} />
+                  <IconPlus size={18} className={"plus"} />
+                  <IconMinus size={18} className={"minus"} />
                 </summary>
                 <p>{ol}</p>
               </details>
@@ -1907,7 +1907,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
               onClick={() => $("Demonstração e diagnóstico gratuito")}
             >
               {"Agendar demonstração "}
-              <ArrowUpRight size={18} />
+              <IconArrowUpRight size={18} />
             </button>
           </div>
           <div className={"s-final-card"}>
@@ -2027,7 +2027,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
   );
 }
 function Brand() {
-  return <ShieldCheck size={24} />;
+  return <IconShieldCheck size={24} />;
 }
 function PlanCard({
   title: N,
@@ -2053,7 +2053,7 @@ function PlanCard({
       <ul>
         {y.map((jl) => (
           <li key={jl}>
-            <Check size={16} />
+            <IconCheck size={16} />
             {jl}
           </li>
         ))}
