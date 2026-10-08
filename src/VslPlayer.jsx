@@ -22,10 +22,7 @@ export default function VslPlayer() {
     catch { setBlocked(true); }
   }
 
-  return <section className="ry-vsl-section" aria-labelledby="ry-vsl-title">
-    <span className="s-tag">CONHEÇA A RYVELO</span>
-    <h2 id="ry-vsl-title">Veja sua clínica com <em>uma rotina conectada.</em></h2>
-    <p>Assista à apresentação e descubra como acompanhar seus pacientes e organizar os próximos passos.</p>
+  return <div className="ry-vsl-hero">
     <div className="ry-vsl-player">
       <video ref={video} src="/ryvelo-apresentacao.mp4" poster="/ryvelo-vsl-poster.webp"
         autoPlay muted playsInline preload="metadata" controlsList="nodownload noremoteplayback"
@@ -44,5 +41,5 @@ export default function VslPlayer() {
       <div className="ry-vsl-progress" aria-hidden="true"><span style={{width: `${progress}%`}} /></div>
     </div>
     <small>Ative o som para acompanhar a apresentação.</small>
-  </section>;
+  </div>;
 }

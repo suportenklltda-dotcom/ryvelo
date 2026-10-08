@@ -1361,69 +1361,9 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
             </div>
           </div>
           <div className={"s-hero-art"}>
-            <div className={"s-app-preview"}>
-              <div className={"s-preview-top"}>
-                <b>{"ryvelo."}</b>
-                <span>{"Clínica Horizonte"}</span>
-                <span className={"s-avatar"}>{"DC"}</span>
-              </div>
-              <div className={"s-preview-body"}>
-                <div className={"s-mini-label"}>{"TERÇA-FEIRA · 6 OUT"}</div>
-                <h3>{"O que fazer hoje"}</h3>
-                <p>{"18 pacientes para acompanhar"}</p>
-                <div className={"s-preview-metrics"}>
-                  <div>
-                    <IconClock size={17} />
-                    <b>{"40"}</b>
-                    <span>{"Retornos vencidos"}</span>
-                  </div>
-                  <div>
-                    <IconFileText size={17} />
-                    <b>{"R$85 mil"}</b>
-                    <span>{"Orçamentos pendentes"}</span>
-                  </div>
-                </div>
-                <div className={"s-preview-row"}>
-                  <span className={"s-avatar"}>{"MS"}</span>
-                  <div>
-                    <b>{"Mariana Santos"}</b>
-                    <small>{"Retorno de prevenção"}</small>
-                  </div>
-                  <span className={"s-mini-pill"}>{"Chamar"}</span>
-                </div>
-                <div className={"s-preview-row"}>
-                  <span className={"s-avatar"}>{"RO"}</span>
-                  <div>
-                    <b>{"Rafael Oliveira"}</b>
-                    <small>{"Tratamento pendente"}</small>
-                  </div>
-                  <span className={"s-mini-pill"}>{"Chamar"}</span>
-                </div>
-                <div className={"s-preview-row"}>
-                  <span className={"s-avatar"}>{"JC"}</span>
-                  <div>
-                    <b>{"Juliana Costa"}</b>
-                    <small>{"Manutenção ortodôntica"}</small>
-                  </div>
-                  <span className={"s-mini-pill"}>{"Chamar"}</span>
-                </div>
-                <small className={"s-fiction"}>
-                  {"Exemplo ilustrativo · dados fictícios"}
-                </small>
-              </div>
-            </div>
-            <div className={"s-floating"}>
-              <span>
-                <IconCheck size={17} />
-              </span>
-              <div>
-                <b>{"Próximo passo: agendado."}</b>
-                <small>{"Do contato à continuidade do cuidado."}</small>
-              </div>
-            </div>
+            <VslPlayer />
           </div>
         </section>
-        <VslPlayer />
         <div className={"s-brand-line"}>
           <span>{"PARA A ROTINA REAL DA SUA CLÍNICA"}</span>
           <b>{"Odontologia"}</b>
