@@ -1,0 +1,344 @@
+/* Player de VSL (src/VslPlayer.jsx). Paleta da Ryvelo: azul-petróleo e verde-água. */
+.vsl {
+  --vsl-teal: #087f83;
+  --vsl-teal-claro: #8de1db;
+  --vsl-navy: #102d3a;
+  position: relative;
+  isolation: isolate;
+  border-radius: 22px;
+  box-shadow:
+    0 30px 60px -28px rgba(16, 45, 58, 0.55),
+    0 18px 44px -28px rgba(8, 127, 131, 0.65);
+  transition: transform 0.3s;
+}
+.vsl:hover {
+  transform: translateY(-4px);
+}
+.vsl-glow {
+  position: absolute;
+  inset: auto 40px -18px;
+  height: 36px;
+  border-radius: 999px;
+  background: rgba(8, 127, 131, 0.28);
+  filter: blur(22px);
+  pointer-events: none;
+}
+.vsl-frame {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+.vsl-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #06161d;
+}
+
+/* Camadas sobre o vídeo (ícones e avisos): não capturam o clique do player. */
+.vsl-camada {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  pointer-events: none;
+}
+.vsl-carregando {
+  background: rgba(0, 0, 0, 0.1);
+}
+.vsl-carregando-icone {
+  display: flex;
+  width: 56px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+}
+.vsl-spinner {
+  width: 28px;
+  height: 28px;
+  color: var(--vsl-teal-claro);
+  animation: vsl-girar 1s linear infinite;
+}
+@keyframes vsl-girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.vsl-aviso-camada {
+  z-index: 20;
+}
+.vsl-aviso-discreto {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 8px 8px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25);
+  outline: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  transition: transform 0.3s;
+}
+.vsl-frame:hover .vsl-aviso-discreto {
+  transform: scale(1.05);
+}
+.vsl-aviso-discreto-icone {
+  display: flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+}
+.vsl-aviso-discreto-icone svg {
+  width: 16px;
+  height: 16px;
+}
+
+.vsl-aviso-destaque {
+  width: 100%;
+  max-width: 304px;
+  padding: 20px 24px;
+  border: 1px solid rgba(141, 225, 219, 0.35);
+  border-radius: 16px;
+  background: rgba(16, 45, 58, 0.9);
+  box-shadow: 0 14px 40px rgba(8, 127, 131, 0.4);
+  backdrop-filter: blur(8px);
+  text-align: center;
+}
+.vsl-aviso-destaque-titulo {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.vsl-aviso-destaque-icone {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 12px auto;
+}
+.vsl-aviso-destaque-acao {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.vsl-play-camada {
+  background: rgba(0, 0, 0, 0.1);
+}
+.vsl-play {
+  display: flex;
+  width: 80px;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  background: var(--vsl-teal);
+  box-shadow: 0 14px 45px rgba(8, 127, 131, 0.6);
+  transition: transform 0.3s;
+}
+.vsl-frame:hover .vsl-play {
+  transform: scale(1.05);
+}
+.vsl-play svg {
+  width: 32px;
+  height: 32px;
+  margin-left: 4px;
+  fill: currentColor;
+}
+
+/* "Você já começou a assistir": cobre o vídeo e captura os cliques. */
+.vsl-retomada {
+  position: absolute;
+  inset: -1px; /* 1px de folga: evita uma linha do vídeo aparecer na borda */
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background: linear-gradient(135deg, var(--vsl-teal), var(--vsl-navy));
+  text-align: center;
+  cursor: default;
+}
+.vsl-retomada-titulo {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.vsl-retomada-botoes {
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  flex-direction: column;
+  gap: 12px;
+}
+.vsl-botao {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  transition: background 0.17s;
+}
+.vsl-botao svg {
+  width: 16px;
+  height: 16px;
+}
+.vsl-botao-primario {
+  background: #fff;
+  color: var(--vsl-navy);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+.vsl-botao-primario svg {
+  fill: currentColor;
+}
+.vsl-botao-primario:hover {
+  background: #e8f7f6;
+}
+.vsl-botao-secundario {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+.vsl-botao-secundario:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.vsl-controles {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.65);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  cursor: default;
+}
+.vsl-controle {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  transition: background 0.17s;
+}
+.vsl-controle:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+.vsl-controle svg {
+  width: 20px;
+  height: 20px;
+}
+.vsl-icone-cheio {
+  fill: currentColor;
+}
+
+.vsl-barra {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 10;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+}
+.vsl-barra-preenchimento {
+  height: 100%;
+  background: var(--vsl-teal-claro);
+  transition: width 0.3s linear;
+}
+
+@media (max-width: 760px) {
+  .vsl,
+  .vsl-frame {
+    border-radius: 16px;
+  }
+  .vsl-carregando-icone {
+    width: 56px;
+    height: 56px;
+  }
+  .vsl-aviso-discreto {
+    font-size: 14px;
+  }
+  .vsl-aviso-destaque {
+    max-width: 240px;
+    padding: 14px 16px;
+    border-radius: 12px;
+  }
+  .vsl-aviso-destaque-titulo {
+    font-size: 16px;
+  }
+  .vsl-aviso-destaque-icone {
+    width: 36px;
+    height: 36px;
+    margin: 8px auto;
+  }
+  .vsl-aviso-destaque-acao {
+    font-size: 14px;
+  }
+  .vsl-play {
+    width: 64px;
+    height: 64px;
+  }
+  .vsl-play svg {
+    width: 28px;
+    height: 28px;
+  }
+  .vsl-retomada-titulo {
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+  .vsl-retomada-botoes {
+    gap: 10px;
+  }
+  .vsl-controles {
+    bottom: 12px;
+    left: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vsl,
+  .vsl-aviso-discreto,
+  .vsl-play {
+    transition: none;
+  }
+  .vsl-spinner {
+    animation: none;
+  }
+}

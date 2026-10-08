@@ -19,6 +19,7 @@ npm run build
 - `src/main.jsx`: entrada React e escolha de página.
 - `src/styles.css`: estilos completos da publicação, incluindo responsividade.
 - `public/`: foto e favicon originais.
+- `src/VslPlayer.jsx` e `src/vsl-player.css`: player do vídeo de apresentação no topo da página de venda (autoplay mudo com o aviso "Toque para ouvir", retoma de onde a pessoa parou). O arquivo do vídeo é `public/ryvelo-apresentacao.mp4` (16:9, de preferência abaixo de 5 MB); uma capa opcional pode ser passada pela prop `poster`.
 
 Esta recuperação preserva o comportamento da demonstração existente; não cria backend, autenticação ou integrações para uso com pacientes reais. O formulário comercial mantém o destino já usado pela referência.
 
