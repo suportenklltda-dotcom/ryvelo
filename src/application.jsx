@@ -1,3 +1,4 @@
+import VslPlayer from "./VslPlayer";
 import * as React from "react";
 import {
   ArrowUpRight as IconArrowUpRight,
@@ -1422,6 +1423,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
             </div>
           </div>
         </section>
+        <VslPlayer />
         <div className={"s-brand-line"}>
           <span>{"PARA A ROTINA REAL DA SUA CLÍNICA"}</span>
           <b>{"Odontologia"}</b>
