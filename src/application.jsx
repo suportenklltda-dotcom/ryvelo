@@ -1240,16 +1240,16 @@ const questions = [
       "A proposta é conectar gestão e acompanhamento: agenda, pacientes, ficha clínica, orçamentos e financeiro em uma mesma rotina. O acompanhamento de retornos e tratamentos pendentes é o centro da operação.",
     ],
     [
-      "Qual a diferença entre assinatura e implantação?",
-      "Na assinatura, sua equipe configura e opera a plataforma. Na implantação, a Ryvelo conduz o diagnóstico, a configuração dos processos, a personalização do ambiente e o treinamento dentro do escopo contratado.",
+      "A implantação é obrigatória nos dois planos?",
+      "Sim. Starter e Pro exigem R$1.200 de implantação, pagos uma única vez no início. Esse valor cobre diagnóstico, configuração, personalização do ambiente, importação assistida, treinamento e acompanhamento durante a implantação.",
     ],
     [
-      "Por que a implantação tem uma mensalidade de R$197?",
-      "É a condição de assinatura do ambiente personalizado contratado. O investimento inicial cobre o projeto de implantação. A mensalidade cobre o uso e a manutenção; expansões e serviços adicionais são orçados separadamente.",
+      "Quando começo a pagar a mensalidade?",
+      "O primeiro mês é grátis nos dois planos. No início, você paga apenas R$1.200 de implantação. A partir do segundo mês, paga R$197/mês no Starter ou R$297/mês no Pro. Serviços adicionais e consumo separado não fazem parte da gratuidade da mensalidade.",
     ],
     [
       "Minha clínica pode usar sua própria marca?",
-      "Na implantação personalizada, o ambiente recebe a logo e as cores da clínica, com a identificação discreta “Powered by Ryvelo”. A personalização é de identidade e configuração; não inclui propriedade do código-fonte.",
+      "Na implantação incluída nos dois planos, o ambiente recebe a logo e as cores da clínica, com a identificação discreta “Powered by Ryvelo”. A personalização é de identidade e configuração; não inclui propriedade do código-fonte.",
     ],
     [
       "Como funciona o WhatsApp?",
@@ -1618,7 +1618,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
             </ul>
             <button
               className={"s-btn s-btn-light"}
-              onClick={() => $("Implantação personalizada")}
+              onClick={() => $("Implantação — R$1.200 + primeiro mês grátis")}
             >
               {"Quero minha operação implantada "}
               <IconArrowUpRight size={18} />
@@ -1635,7 +1635,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
             </h2>
             <p>
               {
-                "Configure com sua equipe ou conte com a Ryvelo para implantar a operação. Condições propostas para o lançamento."
+                "Dois planos, com implantação obrigatória de R$1.200 e primeiro mês grátis. A mensalidade do plano escolhido começa no segundo mês."
               }
             </p>
           </div>
@@ -1652,7 +1652,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
                 "Configuração padrão",
               ]}
               cta={"Conhecer o Starter"}
-              onClick={() => $("Starter — R$197/mês")}
+              onClick={() => $("Starter — R$1.200 de implantação + primeiro mês grátis; R$197/mês a partir do segundo mês")}
             />
             <PlanCard
               title={"Pro"}
@@ -1666,44 +1666,10 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
                 "Relatórios e suporte prioritário",
               ]}
               cta={"Conhecer o Pro"}
-              onClick={() => $("Pro — R$297/mês")}
+              onClick={() => $("Pro — R$1.200 de implantação + primeiro mês grátis; R$297/mês a partir do segundo mês")}
               featured={!0}
             />
-            <article className={"s-price s-price-custom"}>
-              <span className={"s-price-label"}>
-                {"PROJETO DE IMPLANTAÇÃO"}
-              </span>
-              <h3>{"Personalizada"}</h3>
-              <p>{"Para começar com a operação pronta."}</p>
-              <div className={"s-setup-price"}>
-                <small>{"A partir de"}</small>
-                <span>
-                  {"R$"}
-                  <b>{"1.297"}</b>
-                </span>
-                <small>{"de implantação + R$197/mês"}</small>
-              </div>
-              <ul>
-                {[
-                  "Ambiente com a marca da clínica",
-                  "Processos e funis configurados",
-                  "Mensagens personalizadas",
-                  "Importação e treinamento assistidos",
-                  "Acompanhamento na implantação",
-                ].map((A) => (
-                  <li key={A}>
-                    <IconCheck size={16} />
-                    {A}
-                  </li>
-                ))}
-              </ul>
-              <button
-                className={"s-btn s-btn-dark"}
-                onClick={() => $("Implantação personalizada")}
-              >
-                {"Definir minha implantação"}
-              </button>
-            </article>
+
           </div>
           <p className={"s-price-footnote"}>
             {
@@ -1722,37 +1688,19 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
               </h3>
               <p>
                 {
-                  "Você contrata o trabalho de organizar e implantar a operação. A mensalidade mantém o uso da plataforma dentro dos limites contratados."
+                  "A implantação é obrigatória nos dois planos e custa R$1.200, pagos uma única vez no início. Ela prepara a operação da sua clínica. O primeiro mês de uso é grátis; a partir do segundo, a mensalidade é R$197 no Starter ou R$297 no Pro."
                 }
               </p>
             </div>
             <div className={"s-setup-options"}>
               <div>
-                <b>
-                  {"Essencial "}
-                  <span>{"R$1.297"}</span>
-                </b>
-                <p>
-                  {
-                    "Até 2 funis, 5 regras, 8 mensagens, 1 treinamento e 15 dias de acompanhamento."
-                  }
-                </p>
+                <b>Implantação em ambos os planos <span>R$1.200</span></b>
+                <p>Diagnóstico da rotina, configuração do ambiente com a marca da clínica e organização dos processos e mensagens dentro dos recursos do plano escolhido.</p>
               </div>
               <div>
-                <b>
-                  {"Completa "}
-                  <span>{"R$1.997"}</span>
-                </b>
-                <p>
-                  {
-                    "Até 5 funis, 10 regras, 15 mensagens, 2 treinamentos e 30 dias de acompanhamento."
-                  }
-                </p>
-                <small>
-                  {
-                    "Configuração de 1 número WhatsApp e 1 agente quando disponíveis. Consumo separado."
-                  }
-                </small>
+                <b>Uma operação pronta para começar</b>
+                <p>Importação assistida dos dados, treinamento inicial da equipe e acompanhamento durante a implantação.</p>
+                <small>Primeiro mês grátis. Mensalidade a partir do segundo mês, conforme o plano escolhido.</small>
               </div>
             </div>
           </div>
@@ -1768,31 +1716,22 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
                     <th>{"Recurso"}</th>
                     <th>{"Starter"}</th>
                     <th>{"Pro"}</th>
-                    <th>{"Personalizada"}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    ["Unidades", "1", "1", "1"],
-                    ["Profissionais", "2", "5", "5"],
-                    ["Cadeiras/salas", "3", "5", "5"],
-                    ["Usuários", "5", "12", "12"],
-                    ["Arquivos", "2 GB", "10 GB", "10 GB"],
-                    [
-                      "Funis",
-                      "2 padrão",
-                      "Até 5 configuráveis",
-                      "Até 5 configurados",
-                    ],
-                    ["Marca da clínica", "—", "—", "Incluída"],
-                    ["Importação", "Pela equipe", "Pela equipe", "Assistida"],
-                    [
-                      "Treinamento",
-                      "Tutoriais",
-                      "Tutoriais + encontro coletivo",
-                      "Individual",
-                    ],
-                    ["Mensalidade", "R$197", "R$297", "R$197 + implantação"],
+                    ["Unidades", "1", "1"],
+                    ["Profissionais", "2", "5"],
+                    ["Cadeiras/salas", "3", "5"],
+                    ["Usuários", "5", "12"],
+                    ["Arquivos", "2 GB", "10 GB"],
+                    ["Funis", "2 padrão", "Até 5 configuráveis"],
+                    ["Marca da clínica", "Incluída na implantação", "Incluída na implantação"],
+                    ["Importação", "Assistida", "Assistida"],
+                    ["Treinamento inicial", "Incluído", "Incluído"],
+                    ["Implantação obrigatória", "R$1.200", "R$1.200"],
+                    ["Primeiro mês", "Grátis", "Grátis"],
+                    ["A partir do segundo mês", "R$197/mês", "R$297/mês"],
                   ].map((A) => (
                     <tr key={A[0]}>
                       {A.map((ol, pl) =>
@@ -1888,7 +1827,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
           <div>
             <b>{"Personalize"}</b>
             <a href={"#implantacao"}>{"Implantação"}</a>
-            <button onClick={() => $("Implantação personalizada")}>
+            <button onClick={() => $("Implantação — R$1.200 + primeiro mês grátis")}>
               {"Conversar com a equipe"}
             </button>
           </div>
@@ -1987,11 +1926,14 @@ function PlanCard({
       </span>
       <h3>{N}</h3>
       <p>{L}</p>
-      <div className={"s-plan-value"}>
-        <span>{"R$"}</span>
-        <b>{E}</b>
-        <small>{"/mês"}</small>
+      <div className="s-plan-initial">
+        <strong>R$1.200 de implantação + primeiro mês grátis</strong>
+        <small>Pagamento inicial único · implantação obrigatória</small>
       </div>
+      <div className={"s-plan-value"}>
+        <span>{"R$"}</span><b>{E}</b><small>{"/mês"}</small>
+      </div>
+      <p className="s-plan-billing">A partir do segundo mês</p>
       <ul>
         {y.map((jl) => (
           <li key={jl}>
