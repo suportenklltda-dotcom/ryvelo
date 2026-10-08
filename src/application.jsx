@@ -1635,7 +1635,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
             </h2>
             <p>
               {
-                "Dois planos, com implantação obrigatória de R$1.200 e primeiro mês grátis. A mensalidade do plano escolhido começa no segundo mês."
+                "Escolha o plano ideal para a sua clínica. Primeiro mês grátis nos dois planos."
               }
             </p>
           </div>
@@ -1643,7 +1643,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
             <PlanCard
               title={"Starter"}
               value={"197"}
-              desc={"Para organizar a rotina."}
+              desc={"Para organizar a rotina da clínica."}
               features={[
                 "Até 2 profissionais e 5 usuários",
                 "Agenda, pacientes e financeiro",
@@ -1657,7 +1657,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
             <PlanCard
               title={"Pro"}
               value={"297"}
-              desc={"Para ampliar o acompanhamento."}
+              desc={"Para ampliar o acompanhamento dos pacientes."}
               features={[
                 "Até 5 profissionais e 12 usuários",
                 "Tudo do Starter",
@@ -1676,32 +1676,17 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
               "Sem cobrança por paciente cadastrado. Limites de equipe, arquivos e escopo variam por plano. WhatsApp conectado, mensagens e consumo de IA têm custos separados, conforme disponibilidade."
             }
           </p>
-          <div className={"s-setup-details"}>
+          <div className="s-setup-details s-setup-clear">
             <div>
-              <span className={"s-tag"}>
-                {"O QUE O INVESTIMENTO INICIAL ENTREGA"}
-              </span>
-              <h3>
-                {"Configuração, treinamento"}
-                <br />
-                {"e acompanhamento."}
-              </h3>
-              <p>
-                {
-                  "A implantação é obrigatória nos dois planos e custa R$1.200, pagos uma única vez no início. Ela prepara a operação da sua clínica. O primeiro mês de uso é grátis; a partir do segundo, a mensalidade é R$197 no Starter ou R$297 no Pro."
-                }
-              </p>
+              <span className="s-tag">IMPLANTAÇÃO NOS DOIS PLANOS</span>
+              <h3>Sua clínica pronta para começar.</h3>
+              <p>Configuramos o ambiente, organizamos os processos, auxiliamos na importação dos dados e treinamos sua equipe.</p>
             </div>
-            <div className={"s-setup-options"}>
-              <div>
-                <b>Implantação em ambos os planos <span>R$1.200</span></b>
-                <p>Diagnóstico da rotina, configuração do ambiente com a marca da clínica e organização dos processos e mensagens dentro dos recursos do plano escolhido.</p>
-              </div>
-              <div>
-                <b>Uma operação pronta para começar</b>
-                <p>Importação assistida dos dados, treinamento inicial da equipe e acompanhamento durante a implantação.</p>
-                <small>Primeiro mês grátis. Mensalidade a partir do segundo mês, conforme o plano escolhido.</small>
-              </div>
+            <div className="s-setup-summary">
+              <strong>R$1.200</strong>
+              <span>Pagamento único de implantação</span>
+              <p>Na contratação, você paga R$1.200. A primeira mensalidade só começa no segundo mês.</p>
+              <small>Implantação obrigatória no Starter e no Pro. Recursos e configuração conforme o plano escolhido.</small>
             </div>
           </div>
           <details className={"s-comparison"}>
@@ -1926,14 +1911,12 @@ function PlanCard({
       </span>
       <h3>{N}</h3>
       <p>{L}</p>
-      <div className="s-plan-initial">
-        <strong>R$1.200 de implantação + primeiro mês grátis</strong>
-        <small>Pagamento inicial único · implantação obrigatória</small>
-      </div>
       <div className={"s-plan-value"}>
         <span>{"R$"}</span><b>{E}</b><small>{"/mês"}</small>
       </div>
-      <p className="s-plan-billing">A partir do segundo mês</p>
+      <p className="s-plan-billing">Mensalidade a partir do segundo mês</p>
+      <span className="s-first-free">Primeiro mês grátis</span>
+      <p className="s-setup-note">Implantação inicial: <strong>R$1.200</strong><br />Pagamento único · obrigatória nos dois planos</p>
       <ul>
         {y.map((jl) => (
           <li key={jl}>
