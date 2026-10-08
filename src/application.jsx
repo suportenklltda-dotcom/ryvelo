@@ -1241,11 +1241,11 @@ const questions = [
     ],
     [
       "A implantação é obrigatória nos dois planos?",
-      "Sim. Starter e Pro exigem R$1.200 de implantação, pagos uma única vez no início. Esse valor cobre diagnóstico, configuração, personalização do ambiente, importação assistida, treinamento e acompanhamento durante a implantação.",
+      "Sim. Starter e Pro têm implantação obrigatória em promoção: de R$1.200 por R$697, pagos uma única vez no início. Esse valor cobre diagnóstico, configuração, personalização do ambiente, importação assistida, treinamento e acompanhamento durante a implantação.",
     ],
     [
       "Quando começo a pagar a mensalidade?",
-      "O primeiro mês é grátis nos dois planos. No início, você paga apenas R$1.200 de implantação. A partir do segundo mês, paga R$197/mês no Starter ou R$297/mês no Pro. Serviços adicionais e consumo separado não fazem parte da gratuidade da mensalidade.",
+      "O primeiro mês é grátis nos dois planos. No início, você paga apenas R$697 de implantação. A partir do segundo mês, paga R$197/mês no Starter ou R$297/mês no Pro. Serviços adicionais e consumo separado não fazem parte da gratuidade da mensalidade.",
     ],
     [
       "Minha clínica pode usar sua própria marca?",
@@ -1618,7 +1618,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
             </ul>
             <button
               className={"s-btn s-btn-light"}
-              onClick={() => $("Implantação — R$1.200 + primeiro mês grátis")}
+              onClick={() => $("Implantação — R$697 + primeiro mês grátis")}
             >
               {"Quero minha operação implantada "}
               <IconArrowUpRight size={18} />
@@ -1652,7 +1652,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
                 "Configuração padrão",
               ]}
               cta={"Conhecer o Starter"}
-              onClick={() => $("Starter — R$1.200 de implantação + primeiro mês grátis; R$197/mês a partir do segundo mês")}
+              onClick={() => $("Starter — R$697 de implantação + primeiro mês grátis; R$197/mês a partir do segundo mês")}
             />
             <PlanCard
               title={"Pro"}
@@ -1666,7 +1666,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
                 "Relatórios e suporte prioritário",
               ]}
               cta={"Conhecer o Pro"}
-              onClick={() => $("Pro — R$1.200 de implantação + primeiro mês grátis; R$297/mês a partir do segundo mês")}
+              onClick={() => $("Pro — R$697 de implantação + primeiro mês grátis; R$297/mês a partir do segundo mês")}
               featured={!0}
             />
 
@@ -1683,9 +1683,11 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
               <p>Configuramos o ambiente, organizamos os processos, auxiliamos na importação dos dados e treinamos sua equipe.</p>
             </div>
             <div className="s-setup-summary">
-              <strong>R$1.200</strong>
-              <span>Pagamento único de implantação</span>
-              <p>Na contratação, você paga R$1.200. A primeira mensalidade só começa no segundo mês.</p>
+              <span className="s-promo-label">PROMOÇÃO DE IMPLANTAÇÃO</span>
+              <span className="s-promo-original">De <del>R$1.200</del> por</span>
+              <strong>R$697</strong>
+              <span>Pagamento único de implantação · economize R$503</span>
+              <p>Na contratação, você paga R$697. A primeira mensalidade só começa no segundo mês.</p>
               <small>Implantação obrigatória no Starter e no Pro. Recursos e configuração conforme o plano escolhido.</small>
             </div>
           </div>
@@ -1714,7 +1716,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
                     ["Marca da clínica", "Incluída na implantação", "Incluída na implantação"],
                     ["Importação", "Assistida", "Assistida"],
                     ["Treinamento inicial", "Incluído", "Incluído"],
-                    ["Implantação obrigatória", "R$1.200", "R$1.200"],
+                    ["Implantação obrigatória", "R$697", "R$697"],
                     ["Primeiro mês", "Grátis", "Grátis"],
                     ["A partir do segundo mês", "R$197/mês", "R$297/mês"],
                   ].map((A) => (
@@ -1812,7 +1814,7 @@ Gostaria de agendar uma demonstração e conhecer o diagnóstico gratuito da bas
           <div>
             <b>{"Personalize"}</b>
             <a href={"#implantacao"}>{"Implantação"}</a>
-            <button onClick={() => $("Implantação — R$1.200 + primeiro mês grátis")}>
+            <button onClick={() => $("Implantação — R$697 + primeiro mês grátis")}>
               {"Conversar com a equipe"}
             </button>
           </div>
@@ -1916,7 +1918,7 @@ function PlanCard({
       </div>
       <p className="s-plan-billing">Mensalidade a partir do segundo mês</p>
       <span className="s-first-free">Primeiro mês grátis</span>
-      <p className="s-setup-note">Implantação inicial: <strong>R$1.200</strong><br />Pagamento único · obrigatória nos dois planos</p>
+      <p className="s-setup-note">Implantação inicial: de <del>R$1.200</del> por <strong>R$697</strong><br />Pagamento único · obrigatória nos dois planos</p>
       <ul>
         {y.map((jl) => (
           <li key={jl}>
